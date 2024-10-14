@@ -15,7 +15,7 @@ def unzip_fb2_books(dir, clean_up = True):
     Archives, that contains only one extracted file, can be removed'''
 
     zip_archive_list = glob.glob(f"{dir}\\*.zip")
-    if len(zip_archive_list) == 0:
+    if not zip_archive_list:
         print('Archives with .fb2 and .epub books not found')
         return
 
@@ -52,7 +52,7 @@ def rename_fb2_books(dir, new_dir, delete_orig = True):
         print(f"Created folder for storing books: {new_dir}")
 
     fb2_book_list = glob.glob(f"{dir}\\*.fb2") 
-    if len(fb2_book_list) == 0:
+    if not fb2_book_list:
         print('.fb2 books not found')
 
     renamed_cnt = 0
